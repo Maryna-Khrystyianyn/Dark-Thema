@@ -1,0 +1,185 @@
+@import "main-style";
+@import "variables";
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  background-image: $gradient;
+  background-clip: text;
+  color: transparent;
+
+  background-size: 400%;
+  animation: bg-animation 2s infinite alternate;
+}
+
+section {
+  max-width: $max-width;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: $h-color;
+  text-transform: uppercase;
+  border-bottom: 1px solid $bg-light;
+  padding-bottom: 0.5rem;
+}
+@mixin container($el-width) {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax($el-width, 1fr));
+
+  gap: 1rem;
+}
+
+@mixin fokus {
+  border-color: $akcent-blue;
+  box-shadow: 0 0 8px $akcent-blue;
+}
+
+.dark-buttons {
+  @include container(150px);
+}
+
+@mixin box {
+  border: 1.5px solid $border-color;
+  border-radius: 10px;
+
+  transition: all 0.5s ease;
+}
+.modern-button {
+  @include box;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.2rem;
+  background: #2a2b2c;
+  width: 150px;
+  color: white;
+  cursor: pointer;
+
+  &:hover {
+    background: $bg-light;
+    border-color: $akcent-blue;
+    transform: scale(1.1);
+  }
+  &:active {
+    @include fokus;
+  }
+}
+
+.activ {
+  @include fokus;
+}
+// styles for cards
+.cards-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+@mixin border-top {
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+}
+@mixin border-bottom {
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+}
+@mixin img-bg($url) {
+  background: url($url);
+  grid-area: img;
+  @include border-top();
+  background-size: cover;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "img" "text" "stats";
+  justify-content: center;
+  border-radius: 18px;
+  background: white;
+  text-align: center;
+
+  &:hover{
+    
+    box-shadow: 0 0 12px $akcent-blue;
+   
+  }
+  .img1 {
+    @include img-bg("images/img1.jpg");
+  }
+  .img2 {
+    @include img-bg("images/img2.jpg");
+  }
+  .img3 {
+    @include img-bg("images/img3.jpg");
+  }
+
+  .card-text {
+    grid-area: text;
+    color: #2a2b2c;
+    margin: 5px 25px;
+    .date {
+      text-align: left;
+      color: $main-blue;
+      font-size: 13px;
+      margin-top: 0;
+    }
+    h3 {
+      margin-top: 20px;
+      font-size: 28px;
+    }
+    p {
+      margin-top: 20px;
+      color: $border-color;
+      font-weight: 300;
+    }
+  }
+  .card-stats {
+    grid-area: stats;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    @include border-bottom();
+    background-color: $main-blue;
+    .stat {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 10px;
+      gap: 5px;
+
+      .type {
+        font-size: 11px;
+        font-weight: 300;
+        text-transform: uppercase;
+      }
+      .value {
+        font-size: 22px;
+        font-weight: 700;
+        sup {
+          font-size: 12px;
+        }
+      }
+    }
+    .border {
+      border-left: 1px solid white;
+      border-right: 1px solid white;
+    }
+  }
+}

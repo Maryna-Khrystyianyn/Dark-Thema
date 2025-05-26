@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #222325;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 10px;
+}
+
+@keyframes bg-animation {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+}
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  background-image: linear-gradient(45deg, #ff9671, #f9f871, #0ff, #f9a371);
+  background-clip: text;
+  color: transparent;
+  background-size: 400%;
+  animation: bg-animation 2s infinite alternate;
+}
+
+section {
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: #aaa;
+  text-transform: uppercase;
+  border-bottom: 1px solid #3b3b3b;
+  padding-bottom: 0.5rem;
+}
+
+.dark-buttons {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+.modern-button {
+  border: 1.5px solid #646464;
+  border-radius: 10px;
+  transition: all 0.5s ease;
+  font-size: 0.95rem;
+  padding: 0.75rem 1.2rem;
+  background: #2a2b2c;
+  width: 150px;
+  color: white;
+  cursor: pointer;
+}
+.modern-button:hover {
+  background: #3b3b3b;
+  border-color: #0ff;
+  transform: scale(1.1);
+}
+.modern-button:active {
+  border-color: #0ff;
+  box-shadow: 0 0 8px #0ff;
+}
+
+.activ {
+  border-color: #0ff;
+  box-shadow: 0 0 8px #0ff;
+}
+
+.cards-container {
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  gap: 20px;
+  padding: 30px 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 300px;
+  grid-template-rows: 210px 210px 80px;
+  grid-template-areas: "img" "text" "stats";
+  justify-content: center;
+  border-radius: 18px;
+  background: white;
+  text-align: center;
+}
+.card:hover {
+  box-shadow: 0 0 12px #0ff;
+}
+.card .img1 {
+  background: url("images/img1.jpg");
+  grid-area: img;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-size: cover;
+}
+.card .img2 {
+  background: url("images/img2.jpg");
+  grid-area: img;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-size: cover;
+}
+.card .img3 {
+  background: url("images/img3.jpg");
+  grid-area: img;
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+  background-size: cover;
+}
+.card .card-text {
+  grid-area: text;
+  color: #2a2b2c;
+  margin: 5px 25px;
+}
+.card .card-text .date {
+  text-align: left;
+  color: #0188a8;
+  font-size: 13px;
+  margin-top: 0;
+}
+.card .card-text h3 {
+  margin-top: 20px;
+  font-size: 28px;
+}
+.card .card-text p {
+  margin-top: 20px;
+  color: #646464;
+  font-weight: 300;
+}
+.card .card-stats {
+  grid-area: stats;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: #0188a8;
+}
+.card .card-stats .stat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 5px;
+}
+.card .card-stats .stat .type {
+  font-size: 11px;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.card .card-stats .stat .value {
+  font-size: 22px;
+  font-weight: 700;
+}
+.card .card-stats .stat .value sup {
+  font-size: 12px;
+}
+.card .card-stats .border {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+}
+
+/*# sourceMappingURL=style.css.map */
