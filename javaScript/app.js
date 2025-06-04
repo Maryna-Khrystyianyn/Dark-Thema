@@ -8,7 +8,7 @@ buttons.forEach((bnt) => {
   });
 });
 
-const cards = document.querySelectorAll(".card");
+const cards = document.querySelectorAll(".paralaks");
 VanillaTilt.init(cards, {
   max: 20,  
   glare: true,  

@@ -1,5 +1,6 @@
 @import "main-style";
 @import "variables";
+@import "carousel";
 
 @keyframes bg-animation {
   0% {
@@ -182,4 +183,11 @@ h2 {
       border-right: 1px solid white;
     }
   }
+}
+
+.proba{
+  width: 300px;
+  height: 500px;
+  background-color: aquamarine;
+  perspective: 10;
 }
