@@ -121,7 +121,7 @@ h2 {
 .cards-container {
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  flex-wrap: wrap;
   gap: 20px;
   padding: 30px 0;
 }
