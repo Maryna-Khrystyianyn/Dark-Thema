@@ -1,0 +1,75 @@
+@import "variables";
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 50px 30px;
+
+  margin-bottom: 40px;
+
+  .card__container {
+    width: 310px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      .card__data {
+        animation: show-data 1s forwards;
+        opacity: 0.9;
+        transition: opacity 0.5s;
+      }
+      animation: remuv-overflow 2s forwards;
+    }
+    .card__img {
+      width: 300px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 20px;
+      border: 2px solid $akcent-blue;
+    }
+    .card__data {
+      background-color: $bg-light;
+      padding: 20px;
+      width: 270px;
+      height: 150px;
+      border-radius: 20px;
+
+      border: 2px solid $akcent-blue;
+      opacity: 0;
+      position: absolute;
+      bottom: -9rem;
+      margin: 15px;
+
+      .card__description {
+        font-size: 0.85rem;
+        margin-bottom: 15px;
+      }
+      .card__title {
+        font-size: 1.5rem;
+        margin-bottom: 15px;
+      }
+      .card__link {
+        color: white;
+        font-style: italic;
+      }
+    }
+  }
+}
+
+@keyframes show-data {
+  50% {
+    transform: translateY(-10rem);
+  }
+  100% {
+    transform: translateY(-7rem);
+  }
+}
+
+@keyframes remuv-overflow {
+  to {
+    overflow: initial;
+  }
+}
